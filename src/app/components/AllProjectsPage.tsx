@@ -122,11 +122,11 @@ export function AllProjectsPage({
               <div className="relative h-48 overflow-hidden">
                 <picture>
                   <source
-                    srcSet={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-mobile.png`}
+                    srcSet={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-mobile.png`}
                     media="(max-width: 640px)"
                   />
                   <img
-                    src={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-desktop.png`}
+                    src={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-desktop.png`}
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />

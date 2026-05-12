@@ -69,18 +69,18 @@ export function Projects() {
             <ScrollReveal key={project.title} delay={index * 0.15}>
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer">
                 <div className="relative h-64 overflow-hidden">
-                    <picture>
-                      <source
-                        srcSet={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-mobile.png`}
-                        media="(max-width: 640px)"
-                      />
-                      <img
-                        src={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-desktop.png`}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </picture>
-                  </div>
+                  <picture>
+                    <source
+                      srcSet={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-mobile.png`}
+                      media="(max-width: 640px)"
+                    />
+                    <img
+                      src={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-desktop.png`}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </picture>
+                </div>
 
                 <div className="p-6">
                   <h3 className="mb-3 text-foreground">{project.title}</h3>
