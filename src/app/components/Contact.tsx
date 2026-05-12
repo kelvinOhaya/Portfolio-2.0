@@ -26,6 +26,8 @@ export function Contact() {
   const phone = "+1 (317) 340-7529";
   const githubUrl = "https://github.com/kelvinohaya";
   const linkedinUrl = "https://linkedin.com/in/kelvin-ohaya";
+  const animatedInputClass =
+    "w-full px-4 py-3 bg-input-background border border-border rounded-lg text-foreground transition-[border-color,box-shadow,transform] duration-200 ease-out focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/20 focus:scale-[1.01]";
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -169,7 +171,7 @@ export function Contact() {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-3 bg-input-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
+                    className={animatedInputClass}
                   />
                 </div>
 
@@ -181,7 +183,7 @@ export function Contact() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 bg-input-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
+                    className={animatedInputClass}
                   />
                 </div>
               </div>
@@ -192,7 +194,7 @@ export function Contact() {
                   type="text"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
-                  className="w-full px-4 py-3 bg-input-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
+                  className={animatedInputClass}
                 />
               </div>
 
@@ -202,7 +204,7 @@ export function Contact() {
                   rows={6}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-4 py-3 bg-input-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none text-foreground"
+                  className={`${animatedInputClass} resize-none`}
                 />
               </div>
 
