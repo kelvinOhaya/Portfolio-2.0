@@ -7,7 +7,6 @@ const featuredProjects = [
     title: "Watch Me",
     description:
       "Movie Database with local watchlist created with the TMDB API. Implemented with React.",
-    image: "/screenshots/live/watch-me-desktop.png",
     tags: ["React", "TMDB API", "Vercel"],
     github: "#",
     live: "https://ohaya-watch-me.vercel.app/",
@@ -16,7 +15,6 @@ const featuredProjects = [
     title: "Mist",
     description:
       "Full-stack chat application with CRUD operations, JWT authentication, and real-time communication with Socket.IO.",
-    image: "/screenshots/live/mist-desktop.png",
     tags: ["Socket.IO", "MongoDB", "JWT", "Railway"],
     github: "#",
     live: "https://ko-mist.netlify.app",
@@ -25,7 +23,6 @@ const featuredProjects = [
     title: "MD Pro",
     description:
       "Markdown notetaking web application created with Flutter and Firebase for seamless note syncing.",
-    image: "/screenshots/live/md-pro-desktop.png",
     tags: ["Flutter", "Firebase", "Dart"],
     github: "#",
     live: "https://md-pro-45064.web.app/",
@@ -34,7 +31,6 @@ const featuredProjects = [
     title: "React Calculator",
     description:
       "GUI calculator built with React that can do basic arithmetic operations with a clean, intuitive interface.",
-    image: "/screenshots/live/react-calculator-desktop.png",
     tags: ["React", "JavaScript", "Vercel"],
     github: "#",
     live: "https://calculator-livid-kappa-43.vercel.app/",
@@ -43,7 +39,6 @@ const featuredProjects = [
 
 export function Projects() {
   const navigate = useNavigate();
-  const fallbackImage = "/favicon.svg";
 
   return (
     <section id="projects" className="py-24 px-6 bg-muted/30">
@@ -69,25 +64,6 @@ export function Projects() {
           {featuredProjects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 0.15}>
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer">
-                <div className="relative h-64 overflow-hidden">
-                  <picture>
-                    <source
-                      srcSet={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-mobile.png`}
-                      media="(max-width: 640px)"
-                    />
-                    <img
-                      src={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-desktop.png`}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const img = e.currentTarget;
-                        img.onerror = null;
-                        img.src = fallbackImage;
-                      }}
-                    />
-                  </picture>
-                </div>
-
                 <div className="p-6">
                   <h3 className="mb-3 text-foreground">{project.title}</h3>
 
