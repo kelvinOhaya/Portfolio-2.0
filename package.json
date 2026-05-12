@@ -8,7 +8,8 @@
     "dev": "vite",
     "screenshot": "node scripts/screenshot.js",
     "screenshot:live": "node scripts/screenshot-live.js",
-    "publish:screenshots": "node scripts/publish-screenshots.js"
+    "publish:screenshots": "node scripts/publish-screenshots.js",
+    "screenshot:live:publish": "npm run screenshot:live && npm run publish:screenshots"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

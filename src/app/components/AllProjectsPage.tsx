@@ -61,6 +61,7 @@ export function AllProjectsPage({
   toggleDarkMode,
 }: AllProjectsPageProps) {
   const navigate = useNavigate();
+  const fallbackImage = "/favicon.svg";
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -129,6 +130,11 @@ export function AllProjectsPage({
                     src={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-desktop.png`}
                     alt={project.title}
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      img.onerror = null;
+                      img.src = fallbackImage;
+                    }}
                   />
                 </picture>
               </div>

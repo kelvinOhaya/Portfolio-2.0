@@ -43,6 +43,7 @@ const featuredProjects = [
 
 export function Projects() {
   const navigate = useNavigate();
+  const fallbackImage = "/favicon.svg";
 
   return (
     <section id="projects" className="py-24 px-6 bg-muted/30">
@@ -78,6 +79,11 @@ export function Projects() {
                       src={`/screenshots/live/${project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-desktop.png`}
                       alt={project.title}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const img = e.currentTarget;
+                        img.onerror = null;
+                        img.src = fallbackImage;
+                      }}
                     />
                   </picture>
                 </div>
