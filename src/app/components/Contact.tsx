@@ -75,12 +75,6 @@ export function Contact() {
             </div>
 
             <h2 className="mb-4 text-foreground">Let's Connect</h2>
-
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Interested in discussing how I can help improve your team's
-              workflow from design to product? Let's talk about internship
-              opportunities or collaboration!
-            </p>
           </div>
         </ScrollReveal>
 
