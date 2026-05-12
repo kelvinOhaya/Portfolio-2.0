@@ -84,7 +84,7 @@ export function MainPortfolio({
             <span className="text-foreground hidden sm:inline">
               Kelvin Ohaya
             </span>
-            <span className="text-foreground sm:hidden">K.O</span>
+            <span className="text-foreground sm:hidden">KO</span>
           </motion.div>
 
           <motion.div
