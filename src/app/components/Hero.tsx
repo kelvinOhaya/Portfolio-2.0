@@ -12,21 +12,25 @@ export function Hero() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // capture non-null references for nested functions to avoid TS nullable errors
+    const canvasEl: HTMLCanvasElement = canvas;
+    const ctx2: CanvasRenderingContext2D = ctx;
+
     const dpr = window.devicePixelRatio || 1;
     function resize() {
-      const w = canvas.clientWidth || window.innerWidth;
-      const h = canvas.clientHeight || window.innerHeight;
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
-      canvas.style.width = `${w}px`;
-      canvas.style.height = `${h}px`;
+      const w = canvasEl.clientWidth || window.innerWidth;
+      const h = canvasEl.clientHeight || window.innerHeight;
+      canvasEl.width = Math.round(w * dpr);
+      canvasEl.height = Math.round(h * dpr);
+      canvasEl.style.width = `${w}px`;
+      canvasEl.style.height = `${h}px`;
       draw();
     }
 
     function draw() {
-      const width = canvas.width;
-      const height = canvas.height;
-      ctx.clearRect(0, 0, width, height);
+      const width = canvasEl.width;
+      const height = canvasEl.height;
+      ctx2.clearRect(0, 0, width, height);
       // subtle noise: draw many semi-transparent pixels
       const density = 0.0025; // lower = less noise
       const total = Math.floor(width * height * density);
@@ -34,8 +38,8 @@ export function Hero() {
         const x = Math.floor(Math.random() * width);
         const y = Math.floor(Math.random() * height);
         const alpha = Math.random() * 0.08; // very subtle
-        ctx.fillStyle = `rgba(0,0,0,${alpha})`;
-        ctx.fillRect(x, y, 1, 1);
+        ctx2.fillStyle = `rgba(0,0,0,${alpha})`;
+        ctx2.fillRect(x, y, 1, 1);
       }
     }
 
