@@ -30,7 +30,7 @@ export function About() {
               </h2>
 
               <p className="text-muted-foreground mb-6">
-                I'm a Computer Science student passionate about softwar
+                I'm a Computer Science student passionate about software
                 engineering. Whether it is designing user friendly experiences,
                 or scalable APIs, I aim to provide quality results for any phase
                 of the software development cycle.
