@@ -7,32 +7,44 @@ const featuredProjects = [
     title: "Watch Me",
     description:
       "Movie Database with local watchlist created with the TMDB API. Implemented with React.",
+    codeLinks: [
+      { label: "Code", url: "https://github.com/kelvinOhaya/watch-me" },
+    ],
     tags: ["React", "TMDB API", "Vercel"],
-    github: "#",
     live: "https://ohaya-watch-me.vercel.app/",
   },
   {
     title: "Mist",
     description:
       "Full-stack chat application with CRUD operations, JWT authentication, and real-time communication with Socket.IO.",
+    codeLinks: [
+      { label: "Backend", url: "https://github.com/kelvinOhaya/mist-backend" },
+      {
+        label: "Frontend",
+        url: "https://github.com/kelvinOhaya/mist-frontend",
+      },
+    ],
     tags: ["Socket.IO", "MongoDB", "JWT", "Railway"],
-    github: "#",
     live: "https://ko-mist.netlify.app",
   },
   {
     title: "MD Pro",
     description:
       "Markdown notetaking web application created with Flutter and Firebase for seamless note syncing.",
+    codeLinks: [
+      { label: "Code", url: "https://github.com/kelvinOhaya/MDProFlutter" },
+    ],
     tags: ["Flutter", "Firebase", "Dart"],
-    github: "#",
     live: "https://md-pro-45064.web.app/",
   },
   {
     title: "React Calculator",
     description:
       "GUI calculator built with React that can do basic arithmetic operations with a clean, intuitive interface.",
+    codeLinks: [
+      { label: "Code", url: "https://github.com/kelvinOhaya/Calculator" },
+    ],
     tags: ["React", "JavaScript", "Vercel"],
-    github: "#",
     live: "https://calculator-livid-kappa-43.vercel.app/",
   },
 ];
@@ -83,15 +95,18 @@ export function Projects() {
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <Github size={18} />
-                      <span>Code</span>
-                    </a>
+                    {project.codeLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <Github size={18} />
+                        <span>{link.label}</span>
+                      </a>
+                    ))}
                     <a
                       href={project.live}
                       target="_blank"

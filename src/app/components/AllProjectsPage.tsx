@@ -11,16 +11,20 @@ const projectSections = [
         title: "Watch Me",
         description:
           "Movie Database with local watchlist created with the TMDB API. Implemented with React.",
+        codeLinks: [
+          { label: "Code", url: "https://github.com/kelvinOhaya/watch-me" },
+        ],
         tags: ["React", "TMDB API", "Vercel"],
-        github: "#",
         live: "https://ohaya-watch-me.vercel.app/",
       },
       {
         title: "MD Pro",
         description:
           "Markdown notetaking web application created with Flutter and Firebase.",
+        codeLinks: [
+          { label: "Code", url: "https://github.com/kelvinOhaya/MDProFlutter" },
+        ],
         tags: ["Flutter", "Firebase", "Dart"],
-        github: "#",
         live: "https://md-pro-45064.web.app/",
       },
     ],
@@ -32,16 +36,30 @@ const projectSections = [
         title: "Portfolio v 1.0",
         description:
           "Created a personal portfolio website using HTML, CSS, and JavaScript. Deployed with Netlify.",
+        codeLinks: [
+          {
+            label: "Code",
+            url: "https://github.com/kelvinOhaya/Portfolio-2.0",
+          },
+        ],
         tags: ["HTML", "CSS", "JavaScript", "Netlify"],
-        github: "#",
         live: "https://kelvin-ohaya-portfolio.netlify.app/",
       },
       {
         title: "Mist",
         description:
           "Full-stack chat application with CRUD operations and JWT authentication. Implemented real-time communication with Socket.IO and data aggregation pipelines with MongoDB. Deployed with Railway (Backend API), Netlify (Frontend), and MongoDB Atlas (Database).",
+        codeLinks: [
+          {
+            label: "Backend",
+            url: "https://github.com/kelvinOhaya/mist-backend",
+          },
+          {
+            label: "Frontend",
+            url: "https://github.com/kelvinOhaya/mist-frontend",
+          },
+        ],
         tags: ["Socket.IO", "MongoDB", "JWT", "Railway", "Netlify"],
-        github: "#",
         live: "https://ko-mist.netlify.app",
       },
     ],
@@ -53,8 +71,10 @@ const projectSections = [
         title: "React Calculator",
         description:
           "GUI calculator built with React that can do basic arithmetic. Deployed with Vercel.",
+        codeLinks: [
+          { label: "Code", url: "https://github.com/kelvinOhaya/Calculator" },
+        ],
         tags: ["React", "JavaScript", "Vercel"],
-        github: "#",
         live: "https://calculator-livid-kappa-43.vercel.app/",
       },
     ],
@@ -162,16 +182,19 @@ export function AllProjectsPage({
                         ))}
                       </div>
 
-                      <div className="flex items-center gap-3">
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          <Github size={16} />
-                          <span>Code</span>
-                        </a>
+                      <div className="flex items-center gap-3 flex-wrap">
+                        {project.codeLinks.map((link) => (
+                          <a
+                            key={`${project.title}-${link.label}`}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            <Github size={16} />
+                            <span>{link.label}</span>
+                          </a>
+                        ))}
                         <a
                           href={project.live}
                           target="_blank"
