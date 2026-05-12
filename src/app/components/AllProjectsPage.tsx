@@ -29,7 +29,7 @@ const projectSections = [
     season: "Fall 2025",
     projects: [
       {
-        title: "Portfolio",
+        title: "Portfolio v 1.0",
         description:
           "Created a personal portfolio website using HTML, CSS, and JavaScript. Deployed with Netlify.",
         tags: ["HTML", "CSS", "JavaScript", "Netlify"],
@@ -115,7 +115,7 @@ export function AllProjectsPage({
           <h2 className="mb-4 text-foreground">All Projects</h2>
 
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Full Gallery of all my projects
+            All of my projects in one place
           </p>
         </motion.div>
 
